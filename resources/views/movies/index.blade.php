@@ -13,7 +13,7 @@
             <p class="card-text">Languages: {{ $movie->nationality}}</p>
             <p class="card-text">Date: {{ $movie->date}}</p>
             <p class="card-text">Vote: {{ $movie->vote}}</p>
-            <a href="#" class="card-link">Scopri di più</a>      
+            <a href="{{ route('movies.show', ['id' => $movie->id]) }}" class="card-link">Scopri di più</a>      
           </div>
       </div>
     @endforeach
