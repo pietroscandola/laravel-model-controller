@@ -4,16 +4,20 @@
 
 @section('content')
 <div class="container mt-5">
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Titolo Principale</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Titolo Originale</h6>
-          <p class="card-text">Nazionalità</p>
-          <p class="card-text">Data</p>
-          <span class="card-text">voto</span>
-          <a href="#" class="card-link">Card link</a>      
-        </div>
-    </div>
+  <div class="d-flex flex-wrap">
+    @foreach($movies as $movie)
+      <div class="card m-3" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ $movie->title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ $movie->original_title}}</h6>
+            <p class="card-text">{{ $movie->nationality}}</p>
+            <p class="card-text">{{ $movie->date}}</p>
+            <p class="card-text">Voto {{ $movie->vote}}</p>
+            <a href="#" class="card-link">Scopri di più</a>      
+          </div>
+      </div>
+    @endforeach
+  </div>  
 </div>
 
 
